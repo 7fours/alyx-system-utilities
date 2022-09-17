@@ -23,7 +23,7 @@ def __exit(code_):
         )        #had to add an actual exit function in to ensure... exiting.\
                 #definitely like an 8 right now but it got annoying having two 'exit' codes
     )
-    exit()     
+    exit()
 
 def _run(command_):
     os.system(
