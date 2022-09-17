@@ -20,6 +20,9 @@ def __to_do__():
         --add winget commands
         --add pacstall
         --finish help/man page
+        --work on shell
+        --organize code
+        --put help and todo blocks in seperate files (all in one script or import package choice.)
     '''
     )
 def __exit(code_): 
