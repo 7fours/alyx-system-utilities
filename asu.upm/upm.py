@@ -38,7 +38,7 @@ def _run(command_):
         )
     )
 
-def downloader(package_, url):
+def downloader(package_, uri):
     _run(
         command_='sudo %s download %s' % (
             __manager.stored__,
@@ -81,7 +81,7 @@ def _remove(package_):
             'Removing %s with %s' % (
                 dialogHandler.sysout, __manager.stored__
             )
-        )
+    )
     if __manager.stored__ == 'pacman':
         _run(
             command_='sudo pacman -R %s' % (
@@ -282,7 +282,7 @@ class flags():
         action='append', nargs='?'
     )
     parser.add_argument(
-        dest='pointer',
+        dest='target',
         help='points to targeted item',
         action='append',
         nargs='?'
@@ -291,7 +291,7 @@ args = parser.parse_args()
 
 
 class dialogHandler():
-    rawInput = '%s' % (args.pointer)
+    rawInput = '%s' % (args.target)
     bracketless1 = rawInput.replace('[', '')
     bracketless2 = bracketless1.replace(']', '')
     quotes = bracketless2.replace("'", '')
