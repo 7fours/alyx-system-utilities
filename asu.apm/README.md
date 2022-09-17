@@ -1,7 +1,7 @@
 # alyx-system-utilities
 Quality of life improvements for linux and windows systems. In essence, just a cli wrapper for a multitude of applications
 
-### Universal Package Manager (upm)
+### Alyx's Package Manager (apm)
 ```
         Universal Package Manager/upm     
         [written/maintained by Alyxx]
