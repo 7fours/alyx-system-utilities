@@ -6,4 +6,8 @@
         --make downloader function
         --add winget commands
         --add pacstall
+<<<<<<< HEAD
         --finish help/man page
+=======
+        --finish help/man page
+>>>>>>> e8881c45bee451c49afd5a63fcf88ab50c922b6b
