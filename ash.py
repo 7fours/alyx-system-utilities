@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import os
 import argparse
 import sys
@@ -12,7 +13,7 @@ def _exit(__code__):
     print(
         '%s' % (__code__)
     )
-    exit()
+    __parser__()
 
 parser = argparse.ArgumentParser()
 parser.add_argument(
@@ -21,44 +22,62 @@ parser.add_argument(
     action='append',
     nargs='?'
 )
-parser.add_argument(
-    '--test',
-    dest='test',
-    action='store_true'
-)
 args = parser.parse_args()
-class directory():
-    rawInput = args.directory
-    bracketless1 = rawInput.replace('[', '')
+if args.directory == None:
+    working_dir = '~'
+else:
+    _dir = '%s' % (
+        args.directory
+    )
+    bracketless1 = _dir.replace('[', '')
     bracketless2 = bracketless1.replace(']', '')
     quotes = bracketless2.replace("'", '')
     commasWspace = quotes.replace(', ', ' ')
     commas = commasWspace.replace(',', ' ')
-    syscom = commas
-    sysout = syscom.replace(' ', ', ')
+    working_dir = commas.replace(' ', ', ')
 
-
-def __parser__():
-    user = 'ashEll'
-    cd = '%s' % (
-        directory.syscom
-    )
-    if directory.syscom == 'None':
-        cd = '\/'
-    grab = input(
-        '''
-        Alyx's Shell
-        [ash]
-        
-        %s :: %s -->
-        ''' % (
-            user, cd
+class frontend():
+    def __parser__():
+        user = 'aShell'
+        frontend.grab = input( #use grab to write a shell script to then execute
+    '''
+        Alyx's Shell [ash]
+            
+    %s :: %s -->  ''' % (
+                user, working_dir
+            )
         )
-    )
+    def __format__():
+        trigger = '~/.ash/%s.tmp' % (
+            frontend.grab
+        )
+        trigger_opened = os.open(
+            '~/.ash/%s' % (
+                trigger
+            )
+        )
+        trigger_opened = os.write('#!/usr/bin/env bash')
+        trigger_opened.close
+        # os.system(
+        #     'echo "#!/usr/bin/env bash" >> %s' % (
+        #         trigger
+        #     )
+        # )
+        os.system(
+            'sudo chmod +x ~/.ash/%s.tmp' % (
+                grab
+            )
+        )
     os.system(
-        '%s' % (
+        '~/.ash/%s.tmp' % (
             grab
         )
     )
+    os.remove(
+        '~/.ash/%s.tmp' % (
+            grab
+        )
+    )
+    _exit(__code__=1)
 
 __parser__()
