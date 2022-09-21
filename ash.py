@@ -13,7 +13,7 @@ def _exit(__code__):
     print(
         '%s' % (__code__)
     )
-    __parser__()
+    frontend.__parser__()
 
 parser = argparse.ArgumentParser()
 parser.add_argument(
@@ -65,19 +65,20 @@ class frontend():
         # )
         os.system(
             'sudo chmod +x ~/.ash/%s.tmp' % (
-                grab
+                frontend.grab
             )
         )
-    os.system(
-        '~/.ash/%s.tmp' % (
-            grab
+    def __trigger__():
+        os.system(
+            '~/.ash/%s.tmp' % (
+                frontend.grab
+            )
         )
-    )
-    os.remove(
-        '~/.ash/%s.tmp' % (
-            grab
+        os.remove(
+            '~/.ash/%s.tmp' % (
+                frontend.grab
+            )
         )
-    )
     _exit(__code__=1)
 
-__parser__()
+    __parser__()
