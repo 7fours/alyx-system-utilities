@@ -13,7 +13,6 @@ def _exit(__code__):
     print(
         '%s' % (__code__)
     )
-    frontend.__parser__()
 
 parser = argparse.ArgumentParser()
 parser.add_argument(
@@ -39,7 +38,7 @@ else:
 class frontend():
     def __parser__():
         user = 'aShell'
-        frontend.grab = input( #use grab to write a shell script to then execute
+        grab = input( #use grab to write a shell script to then execute
     '''
         Alyx's Shell [ash]
             
