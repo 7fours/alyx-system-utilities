@@ -75,22 +75,32 @@ parse = input(
 )
 
 class engine():
-    def create():
-        os.system(
-            'touch %s/%s.script' % (
-                directory, parse
+    class linux():
+        def format():
+            runner = open(
+                '%s/%s.sh', 'x' % (
+                    directory, user
+                )
             )
-        )
-        runner = '%s/%s.script' % (directory, parse)
-    def format():
-        os.system(
-            'echo "#!/usr/bin/env bash" >> %s' % (
-                engine.runner
-            ) #could work but would be cumbersome user side so probably won't keep
-              #I would like to get it working before making it better, though
-        )
-        os.system(
-            'echo "%s" >> ~/.ash/%s.script' % (
-
+            engine.linux.runner.write(
+                '#!/usr/bin/env bash' #still don't know how to target windows in any capacity.
             )
-        )
+            engine.linux.runner.write(
+                '%s' & (
+                    parse
+                )
+            )
+            runner.close()
+    class win32():
+        def format():
+            runner = open(
+                '%s.ps1', 'x' % (
+                    user
+                )
+            )
+            engine.win32.runner.write(
+                '%s' % (
+                    parse
+                )
+            )
+            runner.close()
