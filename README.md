@@ -33,7 +33,8 @@ To-Do list:
 - [ ] find a way to push and pull from repos from within script?
 - [ ] add manager.conf file
 - [ ] make downloader function
-- [x](nope) use google drive as repo location?
+- [x] ~~use google drive as repo location?~~
+ - avoid all google services
 - [ ] add winget
 - [ ] add pacstall
-- [x]finish help/man page
+- [x] finish help/man page
