@@ -26,16 +26,14 @@ Dev tools:
 --sandbox            sandbox and test package without installing to system [WIP]
 --debug
 ```
-```
-To-Do list:
-        --add all package managers
-        --finish adding all options and main functions
-        --find a way to push and pull from repos from within script?
-        --add manager.conf file
-        --make downloader function
-        --use google drive as repo location?
-        --add winget
-        --add pacstall
-        --finish help/man page
 
-```
+To-Do list:
+- [ ] add all package managers
+- [ ] finish adding all options and main functions
+- [ ] find a way to push and pull from repos from within script?
+- [ ] add manager.conf file
+- [ ] make downloader function
+- [x](nope) use google drive as repo location?
+- [ ] add winget
+- [ ] add pacstall
+- [x]finish help/man page
