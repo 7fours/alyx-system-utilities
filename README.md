@@ -1,4 +1,5 @@
 # alyx-system-utilities
+# **Currently broken. Script itself should be functional but all download links are [likely] dead. No intention to fix as of now but maybe if I get bored, sometime**
 Quality of life improvements for linux and windows systems. In essence, just a cli wrapper for a multitude of applications
 
 ### Universal Package Manager (upm)
